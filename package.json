@@ -1,0 +1,27 @@
+{
+  "name": "du-employee-tracker-proj-10",
+  "version": "1.0.0",
+  "description": "Employee Manager CLI Tool",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anon123123123/du-employee-tracker-proj-10.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anon123123123/du-employee-tracker-proj-10/issues"
+  },
+  "homepage": "https://github.com/anon123123123/du-employee-tracker-proj-10#readme",
+  "dependencies": {
+    "console.table": "^0.10.0",
+    "inquirer": "^8.2.1",
+    "mysql2": "^2.3.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
