@@ -92,7 +92,7 @@ git clone git@github.com:anon123123123/du-employee-tracker-proj-10.git
 
 Once installed run `npm start` and follow the interactive command prompts. The update fields are ID bases so ensure to enter the correct employee ID and role ID.
 
-_For more examples, please refer to the [VIDEO](https://youtu.be/4fQXyLhxLQ0)_
+_For more examples, please refer to the [VIDEO](https://youtu.be/AyzLXCZk7ic)_
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
