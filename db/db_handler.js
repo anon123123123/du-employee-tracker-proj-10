@@ -25,6 +25,7 @@ const dbSelectAll = async(query) => {
         console.clear()
         console.table(results);
         console.log('Press down on the arrow pad to continue')
+        return
       });
 }
 
@@ -35,7 +36,7 @@ const dbSelectAllCheck = async(table) => {
     } 
     else if (table === 'employee') {
         // Possible improvement add name instead of manager ID
-        dbSelectAll('SELECT employee.id, first_name, last_name, manager_id, role.title, role.salary, department.name AS Department FROM employee INNER JOIN role ON employee.id = role.id INNER JOIN department ON role.id = employee.id')
+        dbSelectAll('SELECT employee.id, employee.first_name, employee.last_name, employee.manager_id, role.title, role.salary, department.name AS department FROM department INNER JOIN role ON department.id = role.department_id INNER JOIN employee ON role.id = employee.role_id;')
     }
     else if (table === 'role') {
         dbSelectAll('SELECT * FROM role')

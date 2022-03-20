@@ -129,7 +129,7 @@ const main = async () => {
         insertQuery('employee', answer)
     }
     else if (menuSelect === 'update employee role') {
-        dbSelectAllCheck('update')
+        dbSelectAllCheck('employee')
         console.log('Please enter the ID number of the employee you would like to alter role')
         const answer = await inquirer.prompt(updateQuestions).then((answers) => {
             return answers;

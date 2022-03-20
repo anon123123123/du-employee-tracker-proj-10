@@ -28,3 +28,9 @@ CREATE TABLE employee (
   REFERENCES role(id)
   ON DELETE SET NULL
 );
+
+
+SELECT employee.id, employee.first_name, employee.last_name, employee.manager_id, role.title, role.salary, department.name AS department FROM department 
+INNER JOIN role ON department.id = role.department_id 
+INNER JOIN employee ON role.id = employee.role_id
+UPDATE employee SET manager_id = (SELECT first_name FROM employee WHERE employee.id = 1);
