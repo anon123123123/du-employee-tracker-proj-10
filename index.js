@@ -1,6 +1,6 @@
 // Imports
 const inquirer = require('inquirer')
-const dbSelectAllCheck = require('./db/db_handler')
+const {dbSelectAllCheck, insertQuery} = require('./db/db_handler')
 
 // Initial questions  
 const questionsMenu = [
@@ -14,11 +14,31 @@ const questionsMenu = [
           'View Employees',
           'Add Role',
           'Add Employee',
-          'Update Employee Role'
+          'Update Employee Role',
+          'Exit'
         ],
         filter(val) {
             return val.toLowerCase();
           }
+      }
+]
+
+// Add Role Questions 
+const roleQuestions = [
+    {
+        type: 'input',
+        name: 'title',
+        message: "What's the new role title?"
+      },
+      {
+        type: 'input',
+        name: 'salary',
+        message: "What's the new role salary (Numbers only)? "
+      },
+      {
+        type: 'input',
+        name: 'department_id',
+        message: "What's the new role department id (Numbers only)?"
       }
 ]
 
@@ -31,8 +51,8 @@ const displayMenu = async () => {
 }
 
 
-// Main function anon async to run automatically 
-(async() => {
+// Main function to call all features 
+const main = async() => {
     const menuSelect = await displayMenu()
     if (menuSelect === 'view departments') {
         dbSelectAllCheck('department')
@@ -44,6 +64,10 @@ const displayMenu = async () => {
         dbSelectAllCheck('employee')
     }
     else if (menuSelect === 'add role'){
+        const answer = await inquirer.prompt(roleQuestions).then((answers) => {
+            return answers;
+          });
+          insertQuery('role', answer)
 
     }
     else if (menuSelect === 'add employee'){
@@ -56,10 +80,11 @@ const displayMenu = async () => {
         console.error('No option selected exiting...')
         process.exit()
     }
+    main()
     
-})()
+}
 
-
+main()
 /* 
 Menu Select: 
 view departments
