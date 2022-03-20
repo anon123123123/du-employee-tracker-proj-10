@@ -9,23 +9,23 @@ const db = mysql.createConnection(
     {
       host: '127.0.0.1',
       user: 'root',
-      // MySQL password
       password: SQL_PASS,
       database: 'employee_manager'
     },
     console.log(`Connected to the employee_manager database.`)
 )
 
+// Performs query on DB
 const dbSelectAll = async(query) => {
     db.query(query, function (err, results) {
         if(err) {
             console.error(err)
         }
-        console.log(results);
+        console.table(results);
       });
 }
 
-
+// Determines what table to query 
 const dbSelectAllCheck = async(table) => {
     if (table === 'department') {
         dbSelectAll('SELECT * FROM department')

@@ -38,10 +38,10 @@ const displayMenu = async () => {
         dbSelectAllCheck('department')
     } 
     else if (menuSelect === 'view roles'){
-
+        dbSelectAllCheck('role')
     }
     else if (menuSelect === 'view employees'){
-
+        dbSelectAllCheck('employee')
     }
     else if (menuSelect === 'add role'){
 
