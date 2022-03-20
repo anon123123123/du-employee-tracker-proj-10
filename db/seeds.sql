@@ -16,5 +16,7 @@ VALUES ('Security'),
 ('Malaphar', 'leet', 1, 0),
 ('John', 'Doe', 2, 1),
 ('Sally', 'Sue', 3, 1),
-('Bob', 'Bobertson III', 4, 1);
+('Bob', 'Bobertson III', 4, 1),
+('Tim', 'Alexander-McTimerson PHD V', 4, 1),
+('Karen', 'Complainersten', 4, 1);
 
