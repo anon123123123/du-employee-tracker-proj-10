@@ -13,7 +13,7 @@ VALUES ('Security'),
 
  INSERT INTO employee (first_name, last_name, role_id, manager_id) 
  VALUES 
-('Malphar', 'leet', 1, 0),
+('Malaphar', 'leet', 1, 0),
 ('John', 'Doe', 2, 1),
 ('Sally', 'Sue', 3, 1),
 ('Bob', 'Bobertson III', 4, 1);

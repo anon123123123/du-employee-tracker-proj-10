@@ -31,7 +31,8 @@ const dbSelectAllCheck = async(table) => {
         dbSelectAll('SELECT * FROM department')
     } 
     else if (table === 'employee') {
-        dbSelectAll('SELECT * FROM employee')
+        // dbSelectAll('SELECT employee.id, first_name, last_name, manager_id, role.title, role.salary, department.name AS Department FROM employee INNER JOIN role ON employee.id = role.id INNER JOIN department ON role.id = department.id')
+        dbSelectAll('SELECT employee.id, first_name, last_name, (SELECT employee.first_name WHERE employee.id = 1) AS Manager, role.title, role.salary, department.name AS Department FROM employee INNER JOIN role ON employee.id = role.id INNER JOIN department ON role.id = department.id')
     }
     else if (table === 'role') {
         dbSelectAll('SELECT * FROM role')
