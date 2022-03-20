@@ -4,7 +4,9 @@
   "description": "Employee Manager CLI Tool",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "echo 'Hello World '",
+    "dev":"nodemon index.js",
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
